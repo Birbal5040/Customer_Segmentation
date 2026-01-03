@@ -121,43 +121,6 @@ else:
 df_processed["Cluster"] = labels
 
 
-
-
-
-
-# CUSTOMER SEARCH
-#st.subheader("Search Customer")
-
-# Input Customer ID
-# customer_id = st.number_input(
-#     "Enter Customer ID",
-#     min_value=int(df_processed["CustomerID"].min()),
-#     max_value=int(df_processed["CustomerID"].max()),
-#     step=1
-# )
-#
-# # Search button
-# if st.button("Search"):
-#     result = df_processed[df_processed["CustomerID"] == customer_id]
-#
-#     if not result.empty:
-#         st.success("Customer Found ✅")
-#         st.dataframe(result)
-#     else:
-#         st.error("Customer ID not found ❌")
-
-
-
-
-
-
-
-
-
-
-
-
-
 st.subheader("Clustered Data")
 st.dataframe(df_processed.head())
 
