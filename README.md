@@ -101,25 +101,3 @@ pip install -r requirements.txt
 
 3️⃣ Run Streamlit App
 streamlit run app.py
-
-
-🧪 Sample Output
-
-Clustered customer table
-
-Silhouette score
-
-PCA cluster visualization
-
-Downloadable CSV with cluster labels
-
-
-📌 Use Cases
-
-Marketing strategy optimization
-
-Customer behavior analysis
-
-Targeted promotions
-
-Business intelligence
