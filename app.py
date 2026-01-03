@@ -32,7 +32,20 @@ from src.visualization import pca_visualization
 
 st.set_page_config(page_title="Customer Segmentation", layout="wide")
 
-st.title(" Customer Segmentation Project")
+#st.title(" Customer Segmentation Project")
+
+st.markdown(
+    """
+    <h1 style='text-align: center; color: #03A9F4;'>
+        Customer Segmentation Project
+    </h1>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
+
 
 # --------------- Upload Data Set ---------------
 
