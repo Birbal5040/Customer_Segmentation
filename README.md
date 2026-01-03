@@ -37,17 +37,29 @@ It allows users to upload customer data, apply different clustering algorithms, 
 ## 📁 Project Structure
 
 customer-segmentation/
+
 │
+
 ├── app.py # Main Streamlit application
+
 ├── data/
+
 │ └── Mall_Customers.csv # Default dataset
+
 │
+
 ├── src/
+
 │ ├── preprocessing.py # Data loading & preprocessing
+
 │ ├── clustering.py # Clustering algorithms
+
 │ └── visualization.py # Plotly visualizations
+
 │
+
 ├── requirements.txt # Required Python libraries
+
 └── README.md # Project documentation
 
 
