@@ -1,21 +1,12 @@
-
-
-#  -----Python Libraries-------
+#  --->>>>Python Libraries---->>>>
 import streamlit as st
 import pandas as pd
-
-
-
-
 
 from src.visualization import (
     pca_visualization,
     cluster_bar_chart,
     cluster_pie_chart
 )
-
-
-
 
 
 from src.preprocessing import load_data, preprocess_data
@@ -26,10 +17,8 @@ from src.clustering import (
 )
 from src.visualization import pca_visualization
 
-# --------------- PAGE CONFIG ---------------
 
-
-
+#  ---->>>>PAGE CONFIG---->>>>
 st.set_page_config(page_title="Customer Segmentation", layout="wide")
 
 #st.title(" Customer Segmentation Project")
@@ -43,13 +32,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-
-
-
-
-# --------------- Upload Data Set ---------------
-
-
+# ---->>>>Upload Data Set---->>>> 
 
 st.sidebar.header("📂 Upload Dataset")
 file = st.sidebar.file_uploader("Upload CSV file", type=["csv"])
@@ -62,38 +45,17 @@ else:
 st.subheader(" Raw Data")
 st.dataframe(df.head())
 
-
-
-
-
-#PREPROCESS
-
+# ---->>>> PREPROCESS ---->>>>
 df_processed, scaled_data = preprocess_data(df)
 
-
-
-
-
-
-# ----------- ALGORITHM SELECTION ----------
-
-
+# ---->>>> ALGORITHM SELECTION ---->>>>
 st.sidebar.header(" Clustering Options")
 algo = st.sidebar.selectbox(
     "Choose Algorithm",
     ["K-Means", "Hierarchical", "DBSCAN"]
 )
 
-
-
-
-
-
-
-
-# ------------- CLUSTERING --------------
-
-
+# -CLUSTERING -
 
 if algo == "K-Means":
     k = st.sidebar.slider("Number of Clusters (K)", 2, 10, 5)
@@ -109,19 +71,8 @@ else:
     labels, score = dbscan_clustering(scaled_data, eps, min_samples)
 
 
-
-
-
-
-# ------------ RESULTS ---------------
-
-
-
+# ---->>>> RESULTS ---->>>>
 df_processed["Cluster"] = labels
-
-
-
-
 
 
 # CUSTOMER SEARCH
@@ -147,23 +98,10 @@ df_processed["Cluster"] = labels
 
 
 
-
-
-
-
-
-
-
-
-
-
 st.subheader("Clustered Data")
 st.dataframe(df_processed.head())
 
 st.metric("Silhouette Score", round(score, 3))
-
-
-
 
 st.subheader("Cluster Distribution")
 
@@ -177,31 +115,23 @@ with col2:
     pie_fig = cluster_pie_chart(df_processed)
     st.plotly_chart(pie_fig, use_container_width=True)
 
-
-
-
-
-# ------------- PCA VISUALIZATION -----------
-
-
+# ---->>>> PCA VISUALIZATION ---->>>>
 st.subheader("Cluster Visualization")
 fig = pca_visualization(scaled_data, labels)
 st.plotly_chart(fig, use_container_width=True)
 
 
-
-
-# -------------- CLUSTER PROFILING -------------
+# ---->>>>CLUSTER PROFILING ---->>>>
 st.subheader("Cluster Profiling")
 
 profile = df_processed.groupby("Cluster")[["Age", "Income", "Spending"]].mean()
 st.dataframe(profile)
 
 
-#Birbal Kumar
+# Birbal Kumar
 
 
-#DOWNLOAD RESULT
+# ---->>>> DOWNLOAD RESULT ---->>>>
 st.subheader("Download Results")
 
 csv = df_processed.to_csv(index=False).encode("utf-8")
@@ -212,7 +142,7 @@ st.download_button(
     "text/csv"
 )
 
-# ------------- CUSTOMER SEARCH ----
+#---->>>> CUSTOMER SEARCH ---->>>>
 st.subheader("Search Customer")
 
 cust_id = st.number_input("Enter Customer ID", min_value=1)
@@ -224,9 +154,7 @@ else:
     st.warning("Customer ID not found")
 
 
-# BEU
-
-
+# ---->>>> BEU ---->>>>
 st.markdown(
     """
     <hr>
