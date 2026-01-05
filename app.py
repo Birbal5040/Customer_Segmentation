@@ -34,7 +34,6 @@ st.set_page_config(page_title="Customer Segmentation", layout="wide")
 
 #st.title(" Customer Segmentation Project")
 
-
 st.markdown(
     """
     <h1 style='text-align: center; color: #03A9F4;'>
@@ -43,11 +42,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-
-
-
-
 
 
 
@@ -228,16 +222,3 @@ if cust_id in df_processed["CustomerID"].values:
     st.write(result)
 else:
     st.warning("Customer ID not found")
-
-
-# BEU
-
-st.markdown(
-    """
-    <hr>
-    <p style='text-align: center; color: #03A9F4; font-size: 65px;'>
-        I  ❤️  BEU
-    </p>
-    """,
-    unsafe_allow_html=True
-)
