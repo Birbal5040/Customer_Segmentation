@@ -34,7 +34,7 @@ st.markdown(
 
 # ---->>>>Upload Data Set---->>>> 
 
-st.sidebar.header("📂 Upload Dataset")
+st.sidebar.header(" Upload Dataset")
 file = st.sidebar.file_uploader("Upload CSV file", type=["csv"])
 
 if file:
