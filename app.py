@@ -154,13 +154,3 @@ else:
     st.warning("Customer ID not found")
 
 
-# ---->>>> BEU ---->>>>
-st.markdown(
-    """
-    <hr>
-    <p style='text-align: center; color: #03A9F4; font-size: 65px;'>
-        I  ❤️  BEU
-    </p>
-    """,
-    unsafe_allow_html=True
-)
